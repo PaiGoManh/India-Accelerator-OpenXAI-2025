@@ -1,4 +1,3 @@
-// app/api/sentiment/route.ts
 import { NextRequest, NextResponse } from 'next/server'
 
 type Sentiment = { label: 'Positive' | 'Negative' | 'Neutral'; score: number }

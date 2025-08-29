@@ -50,35 +50,37 @@ const FEATURES: Feature[] = [
 
 export default function Features() {
   return (
-    <section className="pt-20 bg-black text-white ">
-      <div className="mx-auto w-full max-w-7xl px-6">
-        <div className="mx-auto max-w-3xl text-center">
-        <p className="text-xs font-semibold uppercase tracking-wider text-white/50">
+    <section className="pt-[8%] bg-black text-white">
+      <div className="mx-auto w-full max-w-5xl px-4 sm:px-6">
+        <div className="mx-auto max-w-2xl text-center">
+          <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">
             Why VibeCheck AI
-        </p>
-        <h2 className="mt-2 text-3xl font-semibold sm:text-4xl">
+          </p>
+          <h2 className="mt-1 text-2xl font-semibold sm:text-3xl">
             Smarter moderation, faster insights
-        </h2>
-        <p className="mt-3 text-white/70">
+          </h2>
+          <p className="mt-2 text-sm leading-relaxed text-white/70">
             Real‑time sentiment with confidence scores, alerts, and dashboards—powered by local or cloud LLMs.
             Moderate faster and understand your community at a glance.
-        </p>
+          </p>
         </div>
 
-        <div className="mx-auto mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl">
+        <div className="mx-auto mt-8 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 max-w-4xl">
           {FEATURES.map(({ title, desc, icon: Icon }) => (
             <Card
               key={title}
-              className="group h-full border border-white/10 bg-zinc-800/60 shadow-black/30 p-4"
+              className="group h-full border border-white/10 bg-zinc-800/60 shadow-black/30 p-3"
             >
-              <CardHeader className="pb-2">
+              <CardHeader className="pb-1">
                 <CardDecorator>
-                  <Icon className="size-5 text-white" aria-hidden />
+                  <Icon className="size-4 text-white" aria-hidden />
                 </CardDecorator>
-                <h3 className="text-center mt-2 text-sm font-medium text-white">{title}</h3>
+                <h3 className="text-center mt-2 text-sm font-medium text-white">
+                  {title}
+                </h3>
               </CardHeader>
               <CardContent className="pt-1">
-                <p className="text-xs text-white/70">{desc}</p>
+                <p className="text-xs justify-content w-[250px] text-white/70">{desc}</p>
               </CardContent>
             </Card>
           ))}
@@ -89,7 +91,7 @@ export default function Features() {
 }
 
 const CardDecorator = ({ children }: { children: ReactNode }) => (
-  <div className="relative mx-auto size-10 flex items-center justify-center rounded-md border border-white/10 bg-zinc-800/80">
+  <div className="relative mx-auto size-9 flex items-center justify-center rounded-md border border-white/10 bg-zinc-800/80">
     {children}
   </div>
 )
