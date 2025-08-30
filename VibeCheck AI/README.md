@@ -1,108 +1,69 @@
-# 📚 LearnAI Template
+# 🚦 VibeCheckAI – Make Every Comment Count
 
-A Next.js template for building educational AI applications! This template provides three powerful learning tools: Flashcard Maker, Quiz Generator, and Ask-Me Study Buddy.
+A Next.js app for **real-time sentiment analysis** of comments. VibeCheckAI classifies every comment as positive, negative, or neutral to help you improve moderation, protect your brand, and understand your community’s mood.
+
+---
 
 ## Features
 
-### 🃏 Flashcard Maker
-- **Smart Flashcards**: Paste your notes and AI creates interactive flashcards
-- **Review Mode**: Flip cards to test your knowledge
-- **Bulk Creation**: Generate multiple flashcards from large text blocks
+### 🔎 Comment Sentiment Checker
+- **Live Sentiment Detection**: Instantly analyze the sentiment of any comment.
+- **Classification**: Labels comments as Positive, Negative, or Neutral.
+- **Real-time Feedback**: Results displayed immediately after analysis.
 
-### 📝 Quiz Maker  
-- **Auto Quiz Generation**: Paste text and get a complete quiz
-- **Multiple Choice**: AI generates questions with multiple choice answers
-- **Instant Feedback**: Get immediate results and explanations
+### 🛡️ Moderation and Brand Safety
+- **Moderation Support**: Filter or flag negative comments quickly.
+- **Community Insights**: Track overall community mood with sentiment trends.
 
-### 🤖 Ask-Me Study Buddy
-- **AI Study Partner**: Ask any question and get helpful explanations
-- **Interactive Learning**: Follow-up questions and clarifications
-- **Subject Agnostic**: Works for any topic or subject
+### 🤖 Local & Private AI
+- Run AI models **locally** with Ollama for data privacy.
+- Easily switch between the **Phi-3** model or other supported Ollama models.
+
+---
 
 ## 🚀 Getting Started
 
 ### Installation
 
-1. Navigate to the nextjs-app directory:
-```bash
-cd nextjs-app
-```
+1. Clone or navigate to your project folder.
 
-2. Install dependencies:
-```bash
-npm install
-```
+2. Change directory to the Next.js app:
 
-3. Run the development server:
-```bash
-npm run dev
-```
+    ```
+    cd nextjs-app
+    ```
 
-4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Install dependencies:
 
-## 📁 Project Structure
+    ```
+    npm install
+    ```
 
-```
-nextjs-app/
-├── app/
-│   ├── api/
-│   │   ├── flashcards/
-│   │   │   └── route.ts          # Flashcard generation endpoint
-│   │   ├── quiz/
-│   │   │   └── route.ts          # Quiz generation endpoint
-│   │   └── study-buddy/
-│   │       └── route.ts          # Study buddy chat endpoint
-│   ├── globals.css               # Global styles
-│   ├── layout.tsx                # Root layout component
-│   └── page.tsx                  # Main interface with all features
-├── package.json                  # Dependencies and scripts
-└── tsconfig.json                 # TypeScript configuration
-```
+4. Run the development server:
 
-## 🎯 How to Use
+    ```
+    npm run dev
+    ```
 
-### Flashcard Maker
-1. Click on the "Flashcard Maker" tab
-2. Paste your study notes in the text area
-3. Click "Generate Flashcards" 
-4. Review and flip through your generated flashcards
+5. Open your browser:
 
-### Quiz Maker
-1. Select the "Quiz Maker" tab
-2. Paste the text you want to be quizzed on
-3. Click "Create Quiz"
-4. Answer the multiple choice questions and get instant feedback
+    ```
+    http://localhost:3000
+    ```
 
-### Study Buddy
-1. Go to the "Study Buddy" tab
-2. Type any question you have about your subject
-3. Get detailed explanations and ask follow-up questions
+---
 
-## 🤖 AI Model
+## 🤖 Using Phi-3 or Any Local Ollama Model
 
-This template uses Ollama with the `llama3.2:1b` model for all AI operations. Make sure you have Ollama installed and the model downloaded:
+### Step 1: Install Ollama
 
-```bash
-ollama pull llama3.2:1b
-```
+you can check here -> https://ollama.com/
 
-## 🎨 Customization
+### Step 2: Download the Phi-3 Model (or alternatives)
 
-- Modify the UI in `app/page.tsx`
-- Adjust AI prompts in the API routes
-- Customize styling in `app/globals.css`
-- Add more features by creating new API endpoints
+For Phi-3 Mini:
 
-## 🛠 Dependencies
 
-- **Next.js 14**: React framework
-- **TypeScript**: Type safety
-- **Tailwind CSS**: Styling
-- **Ollama**: Local AI model integration
-
-## 📖 Educational Use Cases
-
-- **Students**: Create study materials from lecture notes
-- **Teachers**: Generate quizzes and learning aids
-- **Self-learners**: Get AI tutoring on any topic
-- **Exam Prep**: Practice with generated questions and flashcards 
+    ```
+    ollama pull phi3
+    ```
