@@ -59,11 +59,100 @@ A Next.js app for **real-time sentiment analysis** of comments. VibeCheckAI clas
 
 you can check here -> https://ollama.com/
 
-### Step 2: Download the Phi-3 Model (or alternatives)
 
-For Phi-3 Mini:
+---
 
+## 🧠 Model Pull Commands Reference
+
+Pull these popular local models with Ollama:
+
+- Phi-3 Mini:
 
     ```
     ollama pull phi3
     ```
+
+- Llama3.2 1B:
+
+    ```
+    ollama pull llama3.2:1b
+    ```
+
+- Mistral:
+
+    ```
+    ollama pull mistral
+    ```
+
+Check available models at: [https://ollama.com/library](https://ollama.com/library)
+
+---
+
+## 🛠 Technologies Used
+
+- Next.js 14 (React framework)
+- TypeScript for type safety
+- Tailwind CSS for styling
+- Ollama for local LLM hosting and serving
+
+---
+
+## 🧑‍🏫 Use Cases
+
+- Social media moderation with sentiment filtering
+- Community engagement analysis and mood tracking
+- Brand protection by detecting and handling negative comments
+- Developers experimenting with local LLMs for sentiment tasks
+
+---
+
+## 💡 Further Reading & Resources
+
+- Ollama GitHub: [https://github.com/ollama/ollama](https://github.com/ollama/ollama)
+- Phi-3 Model on HuggingFace: [https://huggingface.co/microsoft/Phi-3-mini-4k-instruct-gguf](https://huggingface.co/microsoft/Phi-3-mini-4k-instruct-gguf)
+- Ollama with Next.js Tutorials: [https://dev.to/abayomijohn273/building-an-ai-assistant-with-ollama-and-nextjs-part-2-using-packages-1nli](https://dev.to/abayomijohn273/building-an-ai-assistant-with-ollama-and-nextjs-part-2-using-packages-1nli)
+
+---
+
+VibeCheckAI helps **Make Every Comment Count** with lightning-fast, privacy-preserving, local sentiment analysis tailored to modern communities.
+
+
+---
+
+## 🎯 How to Use
+
+1. Paste or write any comment in the input field on the UI.
+2. Click **Analyze Sentiment**.
+3. View the sentiment label (Positive, Negative, Neutral) and confidence score.
+4. Use the output to moderate content or analyze community mood.
+
+---
+
+## 🎨 Customization
+
+- Modify UI inside:
+
+    ```
+    app/page.tsx
+    ```
+
+- Change AI prompt or sentiment logic inside:
+
+    ```
+    app/api/sentiment/route.ts
+    ```
+
+- Update styles in:
+
+    ```
+    app/globals.css
+    ```
+
+- Swap the model by updating fetch calls to use your preferred Ollama model name.
+
+---
+
+## ⚡ API Usage Example (Local Phi-3 Model)
+
+Example TypeScript fetch call to your local Ollama server running Phi-3:
+
