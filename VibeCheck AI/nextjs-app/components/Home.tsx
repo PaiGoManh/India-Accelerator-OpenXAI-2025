@@ -7,7 +7,6 @@ import SentimentDashboardHero from '../components/Icons/SentimentDashboardHero'
 export default function Page() {
   return (
     <main className="relative min-h-[100vh] overflow-hidden bg-[#0b0d12] text-white grid items-center px-[2%]">
-      {/* Video background */}
       <div className="absolute inset-0" aria-hidden="true">
         <Video
           className="h-full w-full object-cover"
@@ -20,7 +19,6 @@ export default function Page() {
         />
       </div>
 
-      {/* Readability overlays */}
       <div
         aria-hidden="true"
         className="absolute inset-0 z-[1] pointer-events-none bg-gradient-to-r from-black/85 via-black/50 to-transparent"
@@ -64,12 +62,11 @@ export default function Page() {
           </div>
 
           {/* Right: Illustration */}
-          <div className="lg:col-span-6">
+          <div data-aos ="fade-up" data-aos-delay="150" className="lg:col-span-6">
             <div className="relative mx-auto w-full max-w-[640px]">
               <SentimentDashboardHero
                 className="w-full h-auto rounded-3xl ring-1 ring-white/10 bg-white/[0.02] shadow-[0_20px_60px_rgba(0,0,0,0.55)]"
               />
-              {/* soft color glow for depth */}
               <div
                 aria-hidden="true"
                 className="pointer-events-none absolute -inset-6 rounded-[30px] bg-[radial-gradient(60%_60%_at_70%_30%,rgba(249,115,22,0.08),transparent_60%)]"

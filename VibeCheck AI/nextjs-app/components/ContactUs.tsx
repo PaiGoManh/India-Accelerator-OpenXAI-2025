@@ -35,15 +35,15 @@ export default function ContactPage() {
     <div className="py-20 bg-black flex justify-center">
       <div className="flex w-full max-w-5xl rounded-lg shadow-2xl overflow-hidden">
         {/* Left column: Text content */}
-        <div className="flex flex-col justify-center bg-black w-1/2 mt-[-40%]">
+        <div data-aos="fade-right" className="flex flex-col justify-center bg-black w-1/2 mt-[-40%]">
           <button className="mb-4 px-4 py-1 bg-[#8B5CF6] text-white rounded-lg w-fit">Contact Us</button>
           <h2 className="text-4xl font-bold mb-3 text-white">Let’s Get In Touch.</h2>
           <p className="text-white mb-8 text-lg">
-            Or just reach out manually to <span className="text-[#8B5CF6]">hello@slothui.com</span>
+            Or just reach out manually to <span className="text-[#8B5CF6]">rahulrahulsajeevan@gmail.com</span>
           </p>
         </div>
         {/* Right column: Form */}
-        <div className="bg-white/5 p-10 w-1/2 flex items-center">
+        <div data-aos="zoom-in" className="bg-white/5 p-10 w-1/2 flex items-center">
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 w-full text-white">
             <div>
               <label className="block mb-1 text-white">Full Name</label>

@@ -66,24 +66,31 @@ export default function Features() {
         </div>
 
         <div className="mx-auto mt-8 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 max-w-4xl">
-          {FEATURES.map(({ title, desc, icon: Icon }) => (
-            <Card
-              key={title}
-              className="group h-full border border-white/10 bg-zinc-800/60 shadow-black/30 p-3"
-            >
-              <CardHeader className="pb-1">
-                <CardDecorator>
-                  <Icon className="size-4 text-white" aria-hidden />
-                </CardDecorator>
-                <h3 className="text-center mt-2 text-sm font-medium text-white">
-                  {title}
-                </h3>
-              </CardHeader>
-              <CardContent className="pt-1">
-                <p className="text-xs justify-content w-[250px] text-white/70">{desc}</p>
-              </CardContent>
-            </Card>
-          ))}
+          {FEATURES.map(({ title, desc, icon: Icon }, i) => {
+            const delay = i * 100
+            return (
+              <div
+                key={title}
+                data-aos="fade-right"
+                data-aos-anchor-placement="top-center"
+                data-aos-delay={delay}
+              >
+                <Card className="group h-full border border-white/10 bg-zinc-800/60 shadow-black/30 p-3">
+                  <CardHeader className="pb-1">
+                    <CardDecorator>
+                      <Icon className="size-4 text-white" aria-hidden />
+                    </CardDecorator>
+                    <h3 className="text-center mt-2 text-sm font-medium text-white">
+                      {title}
+                    </h3>
+                  </CardHeader>
+                  <CardContent className="pt-1">
+                    <p className="text-xs w-[250px] text-white/70">{desc}</p>
+                  </CardContent>
+                </Card>
+              </div>
+            )
+          })}
         </div>
       </div>
     </section>

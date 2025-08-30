@@ -10,29 +10,30 @@ export async function POST(req: NextRequest) {
       return NextResponse.json<Sentiment>({ label: 'Neutral', score: 0 })
     }
 
-    const base = process.env.OLLAMA_BASE || 'http://localhost:11434'
-    const model = process.env.OLLAMA_MODEL || 'phi3:latest'
-
+    // FIX: define the prompt before using it
     const prompt = buildPrompt(text)
 
-    const response = await fetch(`${base}/api/generate`, {
+    const response = await fetch('http://127.0.0.1:11434/v1/chat/completions', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+      },
       body: JSON.stringify({
-        model,
-        prompt,
-        stream: false,
-        options: { temperature: 0 },
+        model: 'phi3', 
+        messages: [{ role: 'user', content: prompt }],
+
       }),
     })
 
+
     if (!response.ok) {
       const errText = await response.text()
-      throw new Error(`Ollama error ${response.status}: ${errText}`)
+      throw new Error(`OpenRouter error ${response.status}: ${errText}`)
     }
 
     const data = await response.json()
-    const content: string = data?.response ?? ''
+    // FIX: OpenRouter returns choices[0].message.content
+    const content: string = data?.choices?.[0]?.message?.content ?? ''
 
     const parsed = safeParseJSON(content)
     const normalized = normalizeSentiment(parsed)
@@ -76,7 +77,8 @@ function safeParseJSON(s: string | undefined) {
   try {
     return JSON.parse(s)
   } catch {
-    const m = s.match(/\{[\s\S]*\}/)
+    // non-greedy to avoid over-capturing if extra text exists
+    const m = s.match(/\{[\s\S]*?\}/)
     if (m) {
       try {
         return JSON.parse(m[0])
@@ -88,9 +90,9 @@ function safeParseJSON(s: string | undefined) {
   }
 }
 
-function normalizeSentiment(input: any): { label: 'Positive' | 'Negative' | 'Neutral'; score: number } {
-  const raw = String(input?.label ?? input?.sentiment ?? '').toLowerCase()
-  const label =
+function normalizeSentiment(input: any): Sentiment {
+  const raw = String(input?.label ?? input?.sentiment ?? '').trim().toLowerCase()
+  const label: Sentiment['label'] =
     raw.includes('pos') ? 'Positive' :
     raw.includes('neg') ? 'Negative' :
     'Neutral'
