@@ -151,8 +151,3 @@ VibeCheckAI helps **Make Every Comment Count** with lightning-fast, privacy-pres
 - Swap the model by updating fetch calls to use your preferred Ollama model name.
 
 ---
-
-## ⚡ API Usage Example (Local Phi-3 Model)
-
-Example TypeScript fetch call to your local Ollama server running Phi-3:
-
